@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Bar Thyme palette ─────────────────────────────── */
+  --color-bt-bg:      #1B1B17;
+  --color-bt-surface: #252520;
+  --color-bt-cream:   #F4EFE6;
+  --color-bt-gold:    #C9A870;
+  --color-bt-muted:   #998F82;
+  --color-bt-border:  color-mix(in srgb, #C9A870 25%, transparent);
+
+  /* ── Typography ─────────────────────────────────────── */
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body:    var(--font-dm-sans), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Base ───────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1B1B17;
+  color: #F4EFE6;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* ── Hero entrance animations (CSS-only, no JS) ─────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-anim {
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-anim-1 { animation-delay: 0.05s; }
+.hero-anim-2 { animation-delay: 0.25s; }
+.hero-anim-3 { animation-delay: 0.45s; }
+.hero-anim-4 { animation-delay: 0.65s; }
+.hero-anim-5 { animation-delay: 0.80s; }
+
+/* ── Scroll-triggered animations (FadeUp.tsx adds .is-visible) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Gold underline link ─────────────────────────────────── */
+.link-gold {
+  color: #C9A870;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 112, 0.4);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.link-gold:hover {
+  border-color: #C9A870;
+}
+
+/* ── Section utility ─────────────────────────────────────── */
+.section-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C9A870;
+  margin-bottom: 1rem;
 }
