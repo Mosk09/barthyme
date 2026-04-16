@@ -45,7 +45,7 @@ export default function ReservationsPage() {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start">
 
           {/* Booking widget — takes up the bulk of the page */}
-          <div className="flex-1 min-w-0 bg-white rounded-sm overflow-hidden">
+          <div className="flex-1 min-w-0 overflow-hidden md:bg-white md:rounded-sm">
             <NowBookItWidget type="reservation" />
           </div>
 

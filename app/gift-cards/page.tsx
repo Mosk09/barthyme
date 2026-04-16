@@ -52,7 +52,7 @@ export default function GiftCardsPage() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           {/* Widget */}
           <div className="flex-1 min-w-0">
-            <div className="bg-white overflow-hidden">
+            <div className="md:bg-white overflow-hidden">
               <NowBookItWidget type="gift" />
             </div>
             <p className="mt-4 text-[0.75rem] text-[#998F82]/60 italic">
