@@ -80,7 +80,7 @@ export default function HomePage() {
             className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/85" />
         </div>
 
         {/* Hero content */}
@@ -97,6 +97,7 @@ export default function HomePage() {
               fontSize: "clamp(3rem, 11vw, 7.5rem)",
               lineHeight: 1.0,
               letterSpacing: "-0.02em",
+              textShadow: "0 2px 24px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.6)",
             }}
           >
             A neighbourhood<br />table
